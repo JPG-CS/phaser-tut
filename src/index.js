@@ -1,15 +1,9 @@
 import Phaser from "phaser";
 
-const config = {
+var config = {
   type: Phaser.AUTO,
   width: 800,
   height: 600,
-  physics: {
-    default: "arcade",
-    arcade: {
-      gravity: { y: 200 }
-    }
-  },
   scene: {
     preload: preload,
     create: create,
@@ -17,15 +11,10 @@ const config = {
   }
 };
 
-const game = new Phaser.Game(config);
+var game = new Phaser.Game(config);
 
-function preload() {
-  // preload a sprite
-  this.load.image("jim", "./public/assets/jim.png");
-}
+function preload() {}
 
-function create() {
-  this.add.image(400, 300, "jim");
-}
+function create() {}
 
 function update() {}
