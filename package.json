@@ -3,7 +3,7 @@
   "author": "",
   "description": "",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/index.html",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "7.2.0",
@@ -15,7 +15,11 @@
     "phaser": "^3.22.0"
   },
   "scripts": {
-    "start": "parcel public/index.html --open",
-    "build": "parcel build public/index.html"
+    "build": "parcel build src/index.html --public-url ./",
+    "watch": "parcel watch src/index.html",
+    "start": "yarn clean && yarn load-assets && parcel serve src/index.html",
+    "load-assets": "mkdir dist/assets && cp -rf src/assets/ dist/assets",
+    "clean": "rm -vrf dist/*",
+    "test": "eslint src"
   }
 }
